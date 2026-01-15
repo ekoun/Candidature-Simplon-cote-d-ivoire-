@@ -1,0 +1,1257 @@
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9ff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d1b69;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-line {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(to right, #ff7e5f, #8a4fff);
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d1b69;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #ff7e5f;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 40px;
+}
+
+.nav-menu a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-menu a:hover {
+    color: #8a4fff;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #ff7e5f, #8a4fff);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #2d1b69;
+    cursor: pointer;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #2d1b69 0%, #8a4fff 50%, #ff7e5f 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #ffcc5f;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(to right, #ff7e5f, #ffcc5f);
+    color: #2d1b69;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 126, 95, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 126, 95, 0.4);
+}
+
+.cta-button i {
+    margin-left: 10px;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-element {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+/* LOGO SIMPLON dans le Hero */
+.simplon-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: pulse 3s infinite;
+}
+
+.simplon-logo img {
+    width: 80px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.code-icon, .design-icon, .digital-icon {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.code-icon {
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, rgba(255, 126, 95, 0.2), rgba(255, 204, 95, 0.2));
+    animation-delay: 0s;
+}
+
+.design-icon {
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, rgba(138, 79, 255, 0.2), rgba(102, 51, 204, 0.2));
+    animation-delay: 2s;
+}
+
+.digital-icon {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgba(45, 27, 105, 0.2), rgba(138, 79, 255, 0.2));
+    animation-delay: 4s;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+}
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+.about-section {
+    background-color: white;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-intro {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #2d1b69;
+    font-weight: 500;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.about-text strong {
+    color: #8a4fff;
+    font-weight: 600;
+}
+
+.about-visual {
+    flex: 1;
+}
+
+.profile-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(138, 79, 255, 0.1);
+    border: 1px solid rgba(138, 79, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ffcc5f;
+}
+
+.card-header h3 {
+    color: #2d1b69;
+    font-size: 1.5rem;
+}
+
+.card-header i {
+    font-size: 2rem;
+    color: #8a4fff;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: #ff7e5f;
+    margin-right: 15px;
+    width: 30px;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 3px;
+}
+
+.info-value {
+    font-weight: 500;
+    color: #333;
+}
+
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
+.skills-section {
+    background-color: #f8f9ff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(138, 79, 255, 0.1);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(138, 79, 255, 0.15);
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.skill-icon.html {
+    background: linear-gradient(135deg, #ff7e5f, #ffcc5f);
+}
+
+.skill-icon.css {
+    background: linear-gradient(135deg, #8a4fff, #6633cc);
+}
+
+.skill-icon.js {
+    background: linear-gradient(135deg, #ffcc5f, #ffdd00);
+}
+
+.skill-icon.design {
+    background: linear-gradient(135deg, #2d1b69, #8a4fff);
+}
+
+.skill-title {
+    font-size: 1.4rem;
+    color: #2d1b69;
+    margin-bottom: 10px;
+}
+
+.skill-desc {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.skill-level {
+    height: 6px;
+    background-color: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.level-bar {
+    height: 100%;
+    background: linear-gradient(to right, #ff7e5f, #8a4fff);
+    border-radius: 3px;
+}
+
+/* =========================================
+   SIMPLON SECTION
+   ========================================= */
+.simplon-section {
+    background-color: white;
+}
+
+.simplon-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.motivation-card {
+    flex: 2;
+    background: linear-gradient(145deg, #f8f9ff, #ffffff);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(138, 79, 255, 0.1);
+    border: 1px solid rgba(138, 79, 255, 0.1);
+}
+
+.motivation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ffcc5f;
+}
+
+.motivation-header h3 {
+    font-size: 1.8rem;
+    color: #2d1b69;
+}
+
+.motivation-header i {
+    font-size: 2rem;
+    color: #ff7e5f;
+}
+
+.motivation-body p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.motivation-body strong {
+    color: #8a4fff;
+}
+
+.values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    background: rgba(138, 79, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.value-item i {
+    color: #8a4fff;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.value-item span {
+    color: #2d1b69;
+    font-weight: 500;
+}
+
+.simplon-visual {
+    flex: 1;
+}
+
+.visual-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+/* LOGO SIMPLON dans la section Pourquoi SIMPLON */
+.simplon-logo-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: 0 15px 40px rgba(138, 79, 255, 0.2);
+    border: 5px solid #8a4fff;
+}
+
+.simplon-logo-large img {
+    width: 120px;
+    height: auto;
+}
+
+.circle-element {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(138, 79, 255, 0.1);
+    animation: pulse 4s infinite;
+}
+
+.circle-element.c1 {
+    width: 350px;
+    height: 350px;
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.circle-element.c2 {
+    width: 250px;
+    height: 250px;
+    top: 50px;
+    left: 50px;
+    background: rgba(255, 126, 95, 0.1);
+    animation-delay: 1s;
+}
+
+.circle-element.c3 {
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    left: 100px;
+    background: rgba(255, 204, 95, 0.1);
+    animation-delay: 2s;
+}
+
+.central-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.central-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2d1b69;
+    line-height: 1.2;
+}
+
+.central-text p:first-child {
+    font-size: 2rem;
+}
+
+.central-text p:last-child {
+    font-size: 1.3rem;
+    color: #8a4fff;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    background: linear-gradient(135deg, #2d1b69 0%, #1a1038 100%);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.footer-brand h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffcc5f;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 300px;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffcc5f;
+}
+
+.footer-social {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-social p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #ff7e5f;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* LOGO SIMPLON dans le Footer */
+.footer-simplon {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.simplon-logo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.simplon-logo-footer img {
+    width: 75px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.simplon-logo-footer span {
+    font-weight: 600;
+    color: #ffcc5f;
+    font-size: 1.2rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .hero-text {
+        margin-bottom: 50px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .about-content, .simplon-content {
+        flex-direction: column;
+    }
+    
+    .about-visual, .simplon-visual {
+        margin-top: 40px;
+    }
+    
+    .visual-element {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .simplon-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .simplon-logo img {
+        width: 65px;
+    }
+    
+    .code-icon, .design-icon, .digital-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .simplon-logo-large {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .simplon-logo-large img {
+        width: 100px;
+    }
+    
+    .visual-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .circle-element.c1 {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .circle-element.c2 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .circle-element.c3 {
+        width: 120px;
+        height: 120px;
+        top: 90px;
+        left: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero-title {
+        font-size: 2.3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .visual-element {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .simplon-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .simplon-logo img {
+        width: 50px;
+    }
+    
+    .code-icon, .design-icon, .digital-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .simplon-logo-large {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .simplon-logo-large img {
+        width: 80px;
+    }
+    
+    .visual-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .circle-element.c1 {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .circle-element.c2 {
+        width: 170px;
+        height: 170px;
+        top: 40px;
+        left: 40px;
+    }
+    
+    .circle-element.c3 {
+        width: 100px;
+        height: 100px;
+        top: 75px;
+        left: 75px;
+    }
+    
+    .central-text {
+        bottom: -30px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .values {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-brand, .footer-links, .footer-social {
+        min-width: 100%;
+        text-align: center;
+    }
+    
+    .footer-brand p {
+        max-width: 100%;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .visual-element {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .simplon-logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .simplon-logo img {
+        width: 45px;
+    }
+    
+    .code-icon, .design-icon, .digital-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .code-icon {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .design-icon {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .simplon-logo-large {
+        width: 100px;
+        height: 100px;
+        border-width: 3px;
+    }
+    
+    .simplon-logo-large img {
+        width: 65px;
+    }
+    
+    .visual-container {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .circle-element.c1 {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .circle-element.c2 {
+        width: 150px;
+        height: 150px;
+        top: 35px;
+        left: 35px;
+    }
+    
+    .circle-element.c3 {
+        width: 80px;
+        height: 80px;
+        top: 70px;
+        left: 70px;
+    }
+    
+    .motivation-card, .profile-card {
+        padding: 25px;
+    }
+    
+    .simplon-logo-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+/* VERSION SIMPLIFIÉE - À METTRE À LA FIN DU FICHIER CSS */
+
+/* Enlève tous les filtres blancs sur les logos */
+.simplon-logo img,
+.simplon-logo-footer img {
+    filter: none !important;
+}
+
+/* Donne un fond blanc aux logos */
+.simplon-logo {
+    background: white !important;
+}
+
+.simplon-logo-footer img {
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* EFFET CLICK SUR LES LOGOS */
+.logo {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.simplon-logo {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.simplon-logo:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.simplon-logo-footer {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.simplon-logo-footer:hover {
+    transform: scale(1.1);
+}
+
+.simplon-logo-footer:hover img {
+    box-shadow: 0 8px 20px rgba(255, 204, 95, 0.4);
+}
+/* =========================================
+   BOUTON RETOUR EN HAUT
+   ========================================= */
+   .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8a4fff, #ff7e5f);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(138, 79, 255, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #ff7e5f, #ffcc5f);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 126, 95, 0.6);
+}
+
+.back-to-top:active {
+    transform: translateY(0);
+}
+
+/* Animation de pulsation occasionnelle */
+@keyframes gentle-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.back-to-top.pulse {
+    animation: gentle-pulse 2s infinite;
+}
