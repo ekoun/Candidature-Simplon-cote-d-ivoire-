@@ -1,7 +1,7 @@
 /* =========================================
    RESET & BASE STYLES
    ========================================= */
-   * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -433,78 +433,31 @@ body {
     background-color: #f8f9ff;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.skill-card {
-    background: white;
+.skills-note {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 20px;
+    background: rgba(138, 79, 255, 0.05);
     border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(138, 79, 255, 0.1);
+    border-left: 4px solid #8a4fff;
 }
 
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(138, 79, 255, 0.15);
-}
-
-.skill-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.skills-note p {
+    color: #555;
+    font-size: 1.05rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 2.5rem;
-    color: white;
+    align-items: flex-start;
 }
 
-.skill-icon.html {
-    background: linear-gradient(135deg, #ff7e5f, #ffcc5f);
+.skills-note i {
+    color: #ff7e5f;
+    margin-right: 15px;
+    margin-top: 3px;
+    font-size: 1.2rem;
 }
 
-.skill-icon.css {
-    background: linear-gradient(135deg, #8a4fff, #6633cc);
-}
-
-.skill-icon.js {
-    background: linear-gradient(135deg, #ffcc5f, #ffdd00);
-}
-
-.skill-icon.design {
-    background: linear-gradient(135deg, #2d1b69, #8a4fff);
-}
-
-.skill-title {
-    font-size: 1.4rem;
+.skills-note strong {
     color: #2d1b69;
-    margin-bottom: 10px;
-}
-
-.skill-desc {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-.skill-level {
-    height: 6px;
-    background-color: #eee;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.level-bar {
-    height: 100%;
-    background: linear-gradient(to right, #ff7e5f, #8a4fff);
-    border-radius: 3px;
 }
 
 /* =========================================
@@ -673,12 +626,13 @@ body {
 }
 
 .central-text p:first-child {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: #8a4fff;
 }
 
 .central-text p:last-child {
-    font-size: 1.3rem;
-    color: #8a4fff;
+    font-size: 1.2rem;
+    color: #2d1b69;
 }
 
 /* =========================================
@@ -795,12 +749,6 @@ body {
     width: 75px;
     height: auto;
     filter: brightness(0) invert(1);
-}
-
-.simplon-logo-footer span {
-    font-weight: 600;
-    color: #ffcc5f;
-    font-size: 1.2rem;
 }
 
 .footer-bottom p {
@@ -1027,13 +975,14 @@ body {
     .central-text {
         bottom: -30px;
         padding: 8px 20px;
-        font-size: 0.9rem;
     }
     
-    .skills-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
+    .central-text p:first-child {
+        font-size: 1.3rem;
+    }
+    
+    .central-text p:last-child {
+        font-size: 1rem;
     }
     
     .values {
@@ -1066,6 +1015,10 @@ body {
     
     .hero-subtitle {
         font-size: 1.3rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
     }
     
     .cta-button {
@@ -1254,4 +1207,102 @@ body {
 
 .back-to-top.pulse {
     animation: gentle-pulse 2s infinite;
+}
+
+/* =========================================
+   COMPÉTENCES SIMPLES (Nouvelle section)
+   ========================================= */
+.simple-skills {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(138, 79, 255, 0.08);
+    border: 1px solid rgba(138, 79, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(10px);
+}
+
+.skill-simple-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+    font-size: 1.8rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Couleurs différentes pour chaque compétence */
+.skill-item:nth-child(1) .skill-simple-icon {
+    background: linear-gradient(135deg, #2d1b69, #8a4fff);
+}
+.skill-item:nth-child(2) .skill-simple-icon {
+    background: linear-gradient(135deg, #ff7e5f, #ffcc5f);
+}
+.skill-item:nth-child(3) .skill-simple-icon {
+    background: linear-gradient(135deg, #0066cc, #3399ff);
+}
+.skill-item:nth-child(4) .skill-simple-icon {
+    background: linear-gradient(135deg, #00cc66, #33ff99);
+}
+
+.skill-simple-text h3 {
+    color: #2d1b69;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.skill-simple-text p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Responsive pour les compétences simples */
+@media (max-width: 768px) {
+    .skill-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .skill-simple-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .skill-simple-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .skills-note {
+        padding: 15px;
+        margin-top: 30px;
+    }
+    
+    .skills-note p {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skills-note i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
